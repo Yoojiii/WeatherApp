@@ -18,6 +18,7 @@ public class UserEntityMapper {
 
     public UserModel toDomain(UserEntity userEntity){
         UserModel userModel = new UserModel();
+        userModel.setId(userEntity.getId());
         userModel.setNickname(userEntity.getNickname());
         userModel.setHashPassword(userModel.getHashPassword());
         userModel.setCity(userEntity.getCity());

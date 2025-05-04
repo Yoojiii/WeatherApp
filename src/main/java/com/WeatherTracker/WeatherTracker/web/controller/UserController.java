@@ -2,11 +2,12 @@ package com.WeatherTracker.WeatherTracker.web.controller;
 
 import com.WeatherTracker.WeatherTracker.domain.service.UserService;
 import com.WeatherTracker.WeatherTracker.web.mapper.UserMapper;
+import com.WeatherTracker.WeatherTracker.web.model.UserLogin;
 import com.WeatherTracker.WeatherTracker.web.model.UserRequest;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.WeatherTracker.WeatherTracker.web.model.UserResponse;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/users")
@@ -23,4 +24,11 @@ public class UserController {
     public String createUser(@RequestBody UserRequest userRequest){
         return userService.createUser(userMapper.requestToDomain(userRequest));
     }
+
+//    @PostMapping("/findByNickname")
+//    public String findByNickname(@RequestBody String nickname){
+//        //nickname = "'" + nickname + "'";
+//        return userService.findByNickname(nickname);
+//    }
+
 }

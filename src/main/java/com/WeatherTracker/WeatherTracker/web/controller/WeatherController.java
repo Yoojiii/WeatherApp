@@ -23,7 +23,7 @@ public class WeatherController {
 
     @PostMapping("/temperature")
     public WeatherResponse getTemperature(@RequestBody WeatherRequest request) {
-        WeatherApiModel apiModel = weatherService.getTemperature(request);
+        WeatherApiModel apiModel = weatherService.getTemperature(weatherMapper.toModel(request));
 
         return weatherMapper.toResponse(apiModel);
     }

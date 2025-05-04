@@ -2,9 +2,17 @@ package com.WeatherTracker.WeatherTracker.domain.model;
 
 
 public class UserModel {
+    private Long id;
     private String nickname;
     private String hashPassword;
     private String city;
+
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getNickname() {
         return nickname;

@@ -2,6 +2,7 @@ package com.WeatherTracker.WeatherTracker.web.mapper;
 
 
 import com.WeatherTracker.WeatherTracker.domain.model.UserModel;
+import com.WeatherTracker.WeatherTracker.web.model.UserLogin;
 import com.WeatherTracker.WeatherTracker.web.model.UserRequest;
 import com.WeatherTracker.WeatherTracker.web.model.UserResponse;
 import org.springframework.stereotype.Component;
@@ -26,8 +27,11 @@ public class UserMapper {
         return userModel;
     }
 
-//    public UserModel toDomain(UserResponse userResponse){
-//        UserModel userModel = new UserModel();
-//
-//    }
+    public UserModel loginToDomain(UserLogin userLogin){
+        UserModel userModel = new UserModel();
+        userModel.setNickname(userLogin.getNickanme());
+        //userModel.setHashPassword(userLogin.getPassword());
+
+        return userModel;
+    }
 }
